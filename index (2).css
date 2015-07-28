@@ -1,0 +1,11 @@
+/* index.css*/
+#container{font-size:16px;}
+#left1>p{font-size:30px;}
+#main{overflow:hidden;}
+#left1{float:left; width:20%;margin:20px 20px 0;}
+#left2{float:left; width:10%;margin:20px 20px 0;}
+#right1{float:right; width:10%;margin:20px 20px 0;}
+#right2{float:right; width:10%;margin:20px 20px 0;}
+
+#menu:hover{background-color:#ddd;}
+#footer{text-align: center;margin: 0 auto;}
