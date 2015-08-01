@@ -3,7 +3,7 @@
 body{font-family:Arial.Verdana,sans-serif;width:95%; margin:0 auto;}
 #header{background:red;}
 #footer{background:green;}
-#container{background:blue;}
+#container{background:orange;}
 #main{background:yellow;}
 #sub{background:purple;}
 #footerNavLink{float: right;}
@@ -11,6 +11,8 @@ body{font-family:Arial.Verdana,sans-serif;width:95%; margin:0 auto;}
 #headerNav li{float: left; width:33%;text-align: center; }
 
 img{max-width:100%;}
+.movie{position:relative;height:0; padding-top:56.25%;}/*padding-topで高さを調節。16:9になるように*/
+  iframe{height:100%; position:absolute;left:0;top:0;width:100%;}
 /*スマホのスタイル*/
 #headerNav{display: none;}
 
@@ -29,4 +31,8 @@ margin:15px
 main: 765px
 */
 
-@media all and (min-width: 768px){}
+@media all and (min-width: 768px){
+  #container{overflow:hidden;}
+  #main{float: left;width: 78.0612245%;}
+  #sub{float:right; width:20.4081633%}
+}
