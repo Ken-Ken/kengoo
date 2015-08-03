@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title>menu-bar</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="menu-bar structure.css">
+  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+</head>
+<body>
+  <header>
+    <ul class="menu">
+    <li><a href="#">メニューA</a>
+        <ul class="sub">
+            <li><a href="#">サブメニューA</a></li>
+            <li><a href="#">サブメニューA</a></li>
+            <li><a href="#">サブメニューA</a></li>
+        </ul>
+    </li>
+    <li><a href="#">メニューB</a>
+        <ul class="sub">
+            <li><a href="#">サブメニューB</a></li>
+            <li><a href="#">サブメニューB</a></li>
+            <li><a href="#">サブメニューB</a></li>
+        </ul>
+    </li>
+    <li><a href="#">メニューC</a>
+        <ul class="sub">
+            <li><a href="#">サブメニューC</a></li>
+            <li><a href="#">サブメニューC</a></li>
+            <li><a href="#">サブメニューC</a></li>
+        </ul>
+    </li>
+</ul>
+  </header>
+<div id="main">
+  <p>hello</p>
+  <p>hello</p>
+  <p>hello</p>
+  <p>hello</p>
+  <p>hello</p>
+  <p>hello</p>
+</div>
+<script src="jquery-2.1.4.min.js">
+</script>
+<script>
+$(function(){
+    $("ul.sub").hide();
+    $("ul.menu li").toggle(function(){
+            $("ul",this).slideDown("fast") //:not(:animated)
+        }
+    /* $("header").on("click", "ul.menu li",function(){
+      $("ul",this).slideUp("fast");
+    }); */
+    ,function(){
+      $(".sub").slideUp("fast");
+    });
+});
+</script>
+</body>
+</html>

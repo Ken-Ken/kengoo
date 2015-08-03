@@ -11,8 +11,9 @@
   <div id="header">
   <ul>
     <li><p id="title">Qlik Sense</p></li>
-    <li><img src="menu.png" width=50px height=30px id="menu"></li>
-      <li><img src="search.jpg" width=30px height=30px id="search"></li>
+    <li><img src="menu.png" width=50px height=48px id="menu"></li>
+
+      <li><a href=""><img src="search.jpg" width=30px height=30px id="search"></a></li>
     <li><a href="https://qlikcloud.com/login">
       <img src="cloud.png" width=30px height=30px id="cloud"></a></li>
   </ul>
@@ -20,8 +21,8 @@
 
 <div id="main1">
   <p>Qlik Sense Desktopハブ</p>
-  <button type="new"><a href="http://dotinstall.com/lessons/website_html/9003">アプリの新規作成</a></button>
-  <button type="arrange">並び替え</button>
+  <button id="new"><a href="http://dotinstall.com/lessons/website_html/9003">アプリの新規作成</a></button>
+  <button id="arrange">並び替え</button>
 </div>
 
 <div id="main2">
@@ -39,5 +40,28 @@
   <div><a href="http://global.qlik.com/jp/explore/products/sense/desktop/get-started">はじめに...</a></div>
 </div><!--/footer-->
 </div><!--container-->
+<script src="jquery-2.1.4.min.js"></script>
+<script>
+/*$(function(){
+  $("#menu").toggle(function(){
+    $("#menu-tab").slideUp()
+  },function(){
+    $("#menu-tab").slideDown()
+  });
+});*/
+
+$(function(){
+  $("#menu").click(function(){
+    var li=$('<ul>').html('<li><img src="menu.png" width=200px height=70px id="menu-tab"></li>');
+    $("ul > li:eq(1)").after(li);
+  });
+  $("#title").mouseover(function(){
+    $(this).css("background","green");
+  })
+  .mouseout(function(){
+    $(this).css("background","red");
+  });
+});
+</script>
 </body>
 </html>

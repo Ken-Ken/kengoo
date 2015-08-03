@@ -11,8 +11,9 @@ float:left;width:200px;border:black 1px solid;}
 #menu{float:left;width:50px;
   border:black 1px solid;}
 #menu:hover{background-color:#ddd;}
-#search{float:right; width:30px; border:black 1px solid;}
-#cloud{float:right; width:30px;border:black 1px solid;}
+#menu-tab{background-color:yellow;float:left;width:200px;}
+#search{float:right; width:30px; border:black 1px solid;margin:10px;}
+#cloud{float:right; width:30px;border:black 1px solid;margin:10px;}
 
 
 #main1,#main2{clear:left;border:black 1px solid;margin:2px;}
