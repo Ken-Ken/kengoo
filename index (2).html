@@ -6,40 +6,47 @@
   <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
   <link rel="stylesheet" href="index (2).css">
 </head>
-<body>
-  <div id="container">
-  <div id="header">
-  <ul>
-    <li><p id="title">Qlik Sense</p></li>
-    <li><img src="menu.png" width=50px height=48px id="menu"></li>
 
-      <li><a href=""><img src="search.jpg" width=30px height=30px id="search"></a></li>
-    <li><a href="https://qlikcloud.com/login">
-      <img src="cloud.png" width=30px height=30px id="cloud"></a></li>
+<body>
+<div id="container">
+
+ <header>
+   <ul>
+    <li><p id="title">Qlik Sense</p></li>
+    <li id="menu"><img src="menu.jpg" width=50px height=48px >
+      <ul id="menu-tab">
+        <li><p><a href="http://google.co.jp">アプリについて</a></p></li>
+        <li><a href="">ヘルプ</a></li>
+      </ul>
+    </ii>
+    <li><a href=""><img src="search.jpg" width=30px height=30px id="search"></a></li>
+    <li><a href="https://qlikcloud.com/login"><img src="cloud.png" width=30px height=30px id="cloud"></a></li>
   </ul>
-</div><!--/header-->
+</header><!--/header-->
 
 <div id="main1">
   <p>Qlik Sense Desktopハブ</p>
-  <button id="new"><a href="http://dotinstall.com/lessons/website_html/9003">アプリの新規作成</a></button>
   <button id="arrange">並び替え</button>
+  <button id="new">アプリの新規作成</button>
 </div>
 
 <div id="main2">
    <span>
-    <a href=""><img src="circle graph" width=80px height=80px> </a></span>
+    <a href=""><img src="circle graph.jpg" width=80px height=80px> </a></span>
   <span>
-     <a href=""><img src="menu.png" width=80px height=80px></a></span>
+     <a href=""><img src="circle graph.jpg" width=80px height=80px></a></span>
   <span>
-    <a href=""><img src="menu.png" width=80px height=80px></a></span>
+    <a href=""><img src="circle graph.jpg" width=80px height=80px></a></span>
   <span>
-    <a href=""><img src="menu.png" width=80px height=80px></a> </span>
- </div><!--#main-->
+    <a href=""><img src="circle graph.jpg" width=80px height=80px></a> </span>
+</div><!--#main2-->
 
-  <div id="footer">
+<div id="footer">
   <div><a href="http://global.qlik.com/jp/explore/products/sense/desktop/get-started">はじめに...</a></div>
-</div><!--/footer-->
+ </div><!--/footer-->
+
 </div><!--container-->
+
 <script src="jquery-2.1.4.min.js"></script>
 <script>
 /*$(function(){
@@ -51,17 +58,33 @@
 });*/
 
 $(function(){
+
+  $("#menu-tab").hide();
   $("#menu").click(function(){
-    var li=$('<ul>').html('<li><img src="menu.png" width=200px height=70px id="menu-tab"></li>');
-    $("ul > li:eq(1)").after(li);
+    $("#menu-tab").slideDown();
+    $("body").append('<p class="dummy"></p>');
+
+  //  var li=$('<li>').html('<img src="menu.png" width=200px height=70px id="menu-tab">');
+  //  $("ul > li:eq(1)").after(li);
+
   });
-  $("#title").mouseover(function(){
-    $(this).css("background","green");
-  })
-  .mouseout(function(){
-    $(this).css("background","red");
+
+  $("body").on("click",".dummy",function(){
+    $("#menu-tab").slideUp();
+    $(".dummy").remove();
+    });
+//  $("#title").mouseover(function(){
+//    $(this).css("background","green");
+//  })
+//  .mouseout(function(){
+//    $(this).css("background","red");
+//  });
+
+   $("#new").click(function(){
+     $("#main2").append('<span><a href=""><img src="circle graph.jpg" width=80px height=80px></a></span>');
   });
 });
 </script>
+
 </body>
 </html>

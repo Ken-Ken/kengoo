@@ -7,7 +7,7 @@
   <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
 </head>
 <body>
-  <header>
+<header>
     <ul class="menu">
     <li><a href="#">メニューA</a>
         <ul class="sub">
@@ -31,8 +31,10 @@
         </ul>
     </li>
 </ul>
-  </header>
+</header>
+
 <div id="main">
+  <li><a href="http://yoseik.sakura.ne.jp/unknown/2014/02/12/jquery-%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E8%A1%A8%E7%A4%BA%E3%81%95%E3%81%9B%E3%81%9Fui%E3%82%92%E3%80%81ui%E3%81%AE%E8%A1%A8%E7%A4%BA%E9%A0%98%E5%9F%9F%E4%BB%A5%E5%A4%96%E3%82%92%E3%82%AF/">サブメニューC</a></li>
   <p>hello</p>
   <p>hello</p>
   <p>hello</p>
@@ -43,18 +45,45 @@
 <script src="jquery-2.1.4.min.js">
 </script>
 <script>
-$(function(){
+/*$(function(){
     $("ul.sub").hide();
-    $("ul.menu li").toggle(function(){
-            $("ul",this).slideDown("fast") //:not(:animated)
-        }
+    $("ul.menu li").hover(function(){
+            $("ul:not(:animated)",this).slideDown("fast")
+        },
+        function(){
+            $("ul",this).slideUp("fast");
+    })
+})*/
+
+$(function(){
+
+    $(".sub").hide();
+
+    $("ul.menu  li").click(function(){
+        $("ul",this).slideDown("fast"); //:not(:animated)
+        $('header ul.menu').append('<p class="dummy"></p>');
     /* $("header").on("click", "ul.menu li",function(){
       $("ul",this).slideUp("fast");
     }); */
-    ,function(){
-      $(".sub").slideUp("fast");
+
+  // $("ul:not(:animated)",this).slideUp("fast");
     });
+
+  //  $('#menu').click(function() {
+  //   $('#menuContent').animate({left: '0'}, 200);
+  //   $('body').append('<p class="dummy"></p>');
+  //   });
+    $('header ul.menu').on('click', '.dummy', function() {
+     $('.sub').slideUp("fast");
+     $('p.dummy').remove();
+     });
+
+
+    //$("body:not(.sub)").slideUp("fast");
+
+
 });
+
 </script>
 </body>
 </html>

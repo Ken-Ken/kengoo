@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<meta charset="utf-8">
+<head>
+<title>menubarreference</title>
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+<link rel="stylesheet" href="menu-bar reference.css">
+</head>
+
+<body>
+  <header>
+<ul class="menu">
+    <li><a href="#">メニューA</a>
+        <ul class="sub">
+            <li><a href="#">サブメニューA</a></li>
+            <li><a href="#">サブメニューA</a></li>
+            <li><a href="#">サブメニューA</a>
+                <ul class="sub">
+                    <li><a href="#">サブメニューA2</a></li>
+                    <li><a href="#">サブメニューA2</a></li>
+                    <li><a href="#">サブメニューA2</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><a href="#">メニューB</a>
+        <ul class="sub">
+            <li><a href="#">サブメニューB</a></li>
+            <li><a href="#">サブメニューB</a>
+                <ul class="sub">
+                    <li><a href="#">サブメニューB2</a></li>
+                    <li><a href="#">サブメニューB2</a></li>
+                    <li><a href="#">サブメニューB2</a>
+                        <ul class="sub">
+                            <li><a href="#">サブメニューB3</a></li>
+                            <li><a href="#">サブメニューB3</a></li>
+                            <li><a href="#">サブメニューB3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">サブメニューB</a></li>
+        </ul>
+    </li>
+    <li><a href="#">メニューC</a>
+        <ul class="sub">
+            <li><a href="#">サブメニューC</a>
+                <ul class="sub">
+                    <li><a href="#">サブメニューC2</a></li>
+                    <li><a href="#">サブメニューC2</a></li>
+                    <li><a href="#">サブメニューC2</a></li>
+                </ul>
+            </li>
+            <li><a href="#">サブメニューC</a></li>
+            <li><a href="#">サブメニューC</a></li>
+        </ul>
+    </li>
+</ul>
+<div>
+  <p>hello</p>
+  <p>hello</p>
+  <p>hello</p>
+  <p>hello</p>
+  <p>hello</p>
+</div>
+</header>
+<!--なぜこのhelloの上にバーがでてくるのか？-->
+
+<script src="jquery-2.1.4.min.js"></script>
+<script>
+$(function(){
+   $("ul.sub").hide();
+    $("ul.menu li").hover(function(){
+        $(">ul:not(:animated)",this).slideDown("fast") //ここの意味が分からない
+    },
+    function(){
+        $(">ul",this).slideUp("fast");
+    })
+})
+</script>
+</body>
+</html>
